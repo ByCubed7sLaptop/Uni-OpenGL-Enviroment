@@ -1,0 +1,2 @@
+﻿Main.obj : error LNK2019: unresolved external symbol "public: __cdecl Core::Vector<3,int>::Vector<3,int>(class std::array<int,3>)" (??0?$Vector@$02H@Core@@QEAA@V?$array@H$02@std@@@Z) referenced in function main
+C:\Users\c019949l\Documents\OpenGL-Platformer\x64\Debug\Platformer.exe : fatal error LNK1120: 1 unresolved externals
