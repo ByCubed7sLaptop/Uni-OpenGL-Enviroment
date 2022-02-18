@@ -1,4 +1,4 @@
-# OpenGL 3D Enviroment <small> Module Assessment Part 2 3D game in OpenGL</small>
+# OpenGL 3D Enviroment <small>Module Assessment Part 2</small>
 
 ## Minimum Implementation (30 Marks)
 - [ ] **3D Object from file** - Read in at least one scene Object from file (can be a cube from text file).
