@@ -1,2 +1,11 @@
-﻿Main.obj : error LNK2019: unresolved external symbol "public: __cdecl Core::Vector<3,int>::Vector<3,int>(class std::array<int,3>)" (??0?$Vector@$02H@Core@@QEAA@V?$array@H$02@std@@@Z) referenced in function main
-C:\Users\c019949l\Documents\OpenGL-Platformer\x64\Debug\Platformer.exe : fatal error LNK1120: 1 unresolved externals
+﻿Main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutIdleFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutReshapeFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function main
+Main.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
+Main.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\c019949l\Source\Repos\ByCubed7\OpenGL-Enviroment\x64\Debug\Platformer.exe : fatal error LNK1120: 9 unresolved externals
