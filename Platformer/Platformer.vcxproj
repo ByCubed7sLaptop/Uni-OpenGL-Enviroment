@@ -19,7 +19,114 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="Library\glad.c" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="Library\AudioFile.h" />
+    <ClInclude Include="Library\glad.h" />
+    <ClInclude Include="Library\khrplatform.h" />
+    <ClInclude Include="Library\OpenAL\AL\al.h" />
+    <ClInclude Include="Library\OpenAL\AL\alc.h" />
+    <ClInclude Include="Library\OpenAL\AL\alext.h" />
+    <ClInclude Include="Library\OpenAL\AL\efx-creative.h" />
+    <ClInclude Include="Library\OpenAL\AL\efx-presets.h" />
+    <ClInclude Include="Library\OpenAL\AL\efx.h" />
+    <ClInclude Include="Library\SDL\include\begin_code.h" />
+    <ClInclude Include="Library\SDL\include\close_code.h" />
+    <ClInclude Include="Library\SDL\include\SDL.h" />
+    <ClInclude Include="Library\SDL\include\SDL_assert.h" />
+    <ClInclude Include="Library\SDL\include\SDL_atomic.h" />
+    <ClInclude Include="Library\SDL\include\SDL_audio.h" />
+    <ClInclude Include="Library\SDL\include\SDL_bits.h" />
+    <ClInclude Include="Library\SDL\include\SDL_blendmode.h" />
+    <ClInclude Include="Library\SDL\include\SDL_clipboard.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_android.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_iphoneos.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_macosx.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_minimal.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_pandora.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_psp.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_windows.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_winrt.h" />
+    <ClInclude Include="Library\SDL\include\SDL_config_wiz.h" />
+    <ClInclude Include="Library\SDL\include\SDL_copying.h" />
+    <ClInclude Include="Library\SDL\include\SDL_cpuinfo.h" />
+    <ClInclude Include="Library\SDL\include\SDL_egl.h" />
+    <ClInclude Include="Library\SDL\include\SDL_endian.h" />
+    <ClInclude Include="Library\SDL\include\SDL_error.h" />
+    <ClInclude Include="Library\SDL\include\SDL_events.h" />
+    <ClInclude Include="Library\SDL\include\SDL_filesystem.h" />
+    <ClInclude Include="Library\SDL\include\SDL_gamecontroller.h" />
+    <ClInclude Include="Library\SDL\include\SDL_gesture.h" />
+    <ClInclude Include="Library\SDL\include\SDL_haptic.h" />
+    <ClInclude Include="Library\SDL\include\SDL_hidapi.h" />
+    <ClInclude Include="Library\SDL\include\SDL_hints.h" />
+    <ClInclude Include="Library\SDL\include\SDL_joystick.h" />
+    <ClInclude Include="Library\SDL\include\SDL_keyboard.h" />
+    <ClInclude Include="Library\SDL\include\SDL_keycode.h" />
+    <ClInclude Include="Library\SDL\include\SDL_loadso.h" />
+    <ClInclude Include="Library\SDL\include\SDL_locale.h" />
+    <ClInclude Include="Library\SDL\include\SDL_log.h" />
+    <ClInclude Include="Library\SDL\include\SDL_main.h" />
+    <ClInclude Include="Library\SDL\include\SDL_messagebox.h" />
+    <ClInclude Include="Library\SDL\include\SDL_metal.h" />
+    <ClInclude Include="Library\SDL\include\SDL_misc.h" />
+    <ClInclude Include="Library\SDL\include\SDL_mouse.h" />
+    <ClInclude Include="Library\SDL\include\SDL_mutex.h" />
+    <ClInclude Include="Library\SDL\include\SDL_name.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengl.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengles.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengles2.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengles2_gl2.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengles2_gl2ext.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengles2_gl2platform.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengles2_khrplatform.h" />
+    <ClInclude Include="Library\SDL\include\SDL_opengl_glext.h" />
+    <ClInclude Include="Library\SDL\include\SDL_pixels.h" />
+    <ClInclude Include="Library\SDL\include\SDL_platform.h" />
+    <ClInclude Include="Library\SDL\include\SDL_power.h" />
+    <ClInclude Include="Library\SDL\include\SDL_quit.h" />
+    <ClInclude Include="Library\SDL\include\SDL_rect.h" />
+    <ClInclude Include="Library\SDL\include\SDL_render.h" />
+    <ClInclude Include="Library\SDL\include\SDL_revision.h" />
+    <ClInclude Include="Library\SDL\include\SDL_rwops.h" />
+    <ClInclude Include="Library\SDL\include\SDL_scancode.h" />
+    <ClInclude Include="Library\SDL\include\SDL_sensor.h" />
+    <ClInclude Include="Library\SDL\include\SDL_shape.h" />
+    <ClInclude Include="Library\SDL\include\SDL_stdinc.h" />
+    <ClInclude Include="Library\SDL\include\SDL_surface.h" />
+    <ClInclude Include="Library\SDL\include\SDL_system.h" />
+    <ClInclude Include="Library\SDL\include\SDL_syswm.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_assert.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_common.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_compare.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_crc32.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_font.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_fuzzer.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_harness.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_images.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_log.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_md5.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_memory.h" />
+    <ClInclude Include="Library\SDL\include\SDL_test_random.h" />
+    <ClInclude Include="Library\SDL\include\SDL_thread.h" />
+    <ClInclude Include="Library\SDL\include\SDL_timer.h" />
+    <ClInclude Include="Library\SDL\include\SDL_touch.h" />
+    <ClInclude Include="Library\SDL\include\SDL_types.h" />
+    <ClInclude Include="Library\SDL\include\SDL_version.h" />
+    <ClInclude Include="Library\SDL\include\SDL_video.h" />
+    <ClInclude Include="Library\SDL\include\SDL_vulkan.h" />
+    <ClInclude Include="Library\stb_image.h" />
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -75,12 +182,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)PCH;$(ProjectDir)Include;$(ProjectDir)Library\OpenAL\AL;$(ProjectDir)Library\SDL;$(ProjectDir)Library;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Library\OpenAL\lib;$(ProjectDir)Library\SDL\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)PCH;$(ProjectDir)Include;$(ProjectDir)Library\OpenAL\AL;$(ProjectDir)Library\SDL;$(ProjectDir)Library;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Library\OpenAL\lib;$(ProjectDir)Library\SDL\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -91,6 +202,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Plasma\Library\OpenAL\AL;$(SolutionDir)Plasma\Library\SDL;$(SolutionDir)Plasma\Library;$(SolutionDir)Plasma\Include;$(IncludePath)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -119,6 +231,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Plasma\Library\OpenAL\AL;$(SolutionDir)Plasma\Library\SDL;$(SolutionDir)Plasma\Library;$(SolutionDir)Plasma\Include;$(IncludePath)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,5 +255,19 @@
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets" Condition="Exists('..\packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets')" />
+    <Import Project="..\packages\freeglut.2.8.1.15\build\native\freeglut.targets" Condition="Exists('..\packages\freeglut.2.8.1.15\build\native\freeglut.targets')" />
+    <Import Project="..\packages\glfw.3.3.6\build\native\glfw.targets" Condition="Exists('..\packages\glfw.3.3.6\build\native\glfw.targets')" />
+    <Import Project="..\packages\glm.0.9.9.800\build\native\glm.targets" Condition="Exists('..\packages\glm.0.9.9.800\build\native\glm.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\freeglut.2.8.1.15\build\native\freeglut.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\freeglut.2.8.1.15\build\native\freeglut.targets'))" />
+    <Error Condition="!Exists('..\packages\glfw.3.3.6\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glfw.3.3.6\build\native\glfw.targets'))" />
+    <Error Condition="!Exists('..\packages\glm.0.9.9.800\build\native\glm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\glm.0.9.9.800\build\native\glm.targets'))" />
+  </Target>
 </Project>
