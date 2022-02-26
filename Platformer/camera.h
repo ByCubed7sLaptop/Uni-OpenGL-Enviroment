@@ -1,5 +1,4 @@
-#ifndef CAMERA_H
-#define CAMERA_H
+#pragma once
 
 #include <glad.h>
 #include <glm/glm.hpp>
@@ -27,16 +26,18 @@ const float ZOOM = 45.0f;
 class Camera
 {
 public:
-    // camera Attributes
+    // Attributes
     glm::vec3 Position;
     glm::vec3 Front;
     glm::vec3 Up;
     glm::vec3 Right;
     glm::vec3 WorldUp;
-    // euler Angles
+    
+    // Euler
     float Yaw;
     float Pitch;
-    // camera options
+    
+    // Options
     float MovementSpeed;
     float MouseSensitivity;
     float Zoom;
@@ -66,7 +67,7 @@ public:
         return glm::lookAt(Position, Position + Front, Up);
     }
 
-    // processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
+    // Processes input received from any keyboard-like input system. Accepts input parameter in the form of camera defined ENUM (to abstract it from windowing systems)
     void ProcessKeyboard(Camera_Movement direction, float deltaTime)
     {
         float velocity = MovementSpeed * deltaTime;
@@ -116,15 +117,15 @@ private:
     // calculates the front vector from the Camera's (updated) Euler Angles
     void updateCameraVectors()
     {
-        // calculate the new Front vector
+        // Recalculate the Front vector
         glm::vec3 front;
         front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
         front.y = sin(glm::radians(Pitch));
         front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
         Front = glm::normalize(front);
-        // also re-calculate the Right and Up vector
-        Right = glm::normalize(glm::cross(Front, WorldUp));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
+
+        // Also recalculate the Right and Up vector
+        Right = glm::normalize(glm::cross(Front, WorldUp));
         Up = glm::normalize(glm::cross(Right, Front));
     }
 };
-#endif

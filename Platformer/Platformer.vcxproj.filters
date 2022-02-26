@@ -7,6 +7,7 @@
       <Filter>Library</Filter>
     </ClCompile>
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="Shape.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -305,6 +306,9 @@
       <Filter>Library</Filter>
     </ClInclude>
     <ClInclude Include="camera.h" />
+    <ClInclude Include="Shape.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
