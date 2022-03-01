@@ -20,6 +20,7 @@
 
 class Shape {
 public:
+
     std::vector<Vertex> vertices;
     std::vector<GLuint> indices;
     std::vector<Texture> textures;
@@ -30,6 +31,7 @@ public:
     // Render the mesh
     void Draw(Shader shader);
 
+    static Shape Cube();
 private:
     /*  Render data  */
     GLuint VAO, VBO, EBO;

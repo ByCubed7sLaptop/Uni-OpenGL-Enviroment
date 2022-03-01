@@ -81,3 +81,52 @@ void Shape::SetupMesh() {
     // Unbind Vertex
     glBindVertexArray(0);
 }
+
+
+Shape Shape::Cube()
+{
+    std::vector<Vertex> vertices = std::vector<Vertex>();
+    vertices.push_back(Vertex({ -0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ -0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ -0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+
+    vertices.push_back(Vertex({ -0.5f, -0.5f, 0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f, 0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f, 0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f, 0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ -0.5f,  0.5f, 0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ -0.5f, -0.5f, 0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+
+    vertices.push_back(Vertex({ -0.5f,  0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ -0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ -0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ -0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ -0.5f, -0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+    vertices.push_back(Vertex({ -0.5f,  0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+
+    vertices.push_back(Vertex({ 0.5f,  0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+
+    vertices.push_back(Vertex({ -0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f, -0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ -0.5f, -0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+    vertices.push_back(Vertex({ -0.5f, -0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+
+    vertices.push_back(Vertex({ -0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 1.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ 0.5f,  0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 1.0f, 0.0f }));
+    vertices.push_back(Vertex({ -0.5f,  0.5f,  0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 0.0f }));
+    vertices.push_back(Vertex({ -0.5f,  0.5f, -0.5f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f }));
+
+    return Shape(vertices, std::vector<GLuint>(), std::vector<Texture>());
+}
