@@ -21,22 +21,13 @@
 class Shape {
 public:
 
+    // Copy constructor
+    Shape(const Shape& oldShape);
+
     std::vector<Vertex> vertices;
-    std::vector<GLuint> indices;
-    std::vector<Texture> textures;
 
     // Constructor
-    Shape(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures);
-
-    // Render the mesh
-    void Draw(Shader shader);
+    Shape(std::vector<Vertex> vertices);
 
     static Shape Cube();
-private:
-    /*  Render data  */
-    GLuint VAO, VBO, EBO;
-
-    /*  Functions    */
-    // Initializes all the buffer objects/arrays
-    void SetupMesh();
 };

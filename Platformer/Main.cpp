@@ -1,5 +1,7 @@
 #include "Shader.h"
 #include "Camera.h"
+#include "Shape.h"
+#include "Mesh.h"
 
 //#undef main
 //#undef __gl_h_
@@ -11,9 +13,9 @@
 #include <stb_image.h>
 //#include <glm/gtc/type_ptr.hpp>
 #include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 
 #include <iostream>
-#include "Shape.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -42,7 +44,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // Initialize Window
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "EEEEEEEEEE", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -145,13 +147,15 @@ int main()
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
-    Shape cube = Shape::Cube();
 
     Texture texture1;
     texture1.LoadFromFile("assets/container.png");
 
     Texture texture2;
     texture2.LoadFromFile("assets/awesomeface.png");
+
+    Mesh mesh = Mesh();
+    mesh.textures.push_back(texture1);
 
     // Tell OpenGL for each sampler to which texture unit it belongs to
     ourShader.Use();
@@ -191,21 +195,10 @@ int main()
         glm::mat4 view = camera.GetViewMatrix();
         ourShader.SetUniform("view", view);
 
-        //cube.Draw(ourShader);
+        glBindVertexArray(VAO);
+        mesh.Draw(ourShader, glm::vec3(), glm::quat(0.707107, 0.707107, 0.00, 0.000));
 
         // Render boxes
-        glBindVertexArray(VAO);
-        for (unsigned int i = 0; i < 10; i++)
-        {
-            // Calculate the model matrix for each object and pass it to shader before drawing
-            glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-            model = glm::translate(model, cubePositions[i]);
-            float angle = 20.0f * i;
-            model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-            ourShader.SetUniform("model", model);
-
-            glDrawArrays(GL_TRIANGLES, 0, 36);
-        }
 
         // Swap buffers and poll events
         glfwSwapBuffers(window);

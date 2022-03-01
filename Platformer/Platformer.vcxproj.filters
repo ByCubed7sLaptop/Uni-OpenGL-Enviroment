@@ -8,6 +8,8 @@
     </ClCompile>
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -309,6 +311,7 @@
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Mesh.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
