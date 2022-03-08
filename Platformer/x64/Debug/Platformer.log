@@ -7,7 +7,7 @@ C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\gla
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(1153): message : see previous definition of 'GL_TEXTURE_COMPONENTS'
 C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(592,1): warning C4005: 'GL_CLIENT_ALL_ATTRIB_BITS': macro redefinition
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(973): message : see previous definition of 'GL_CLIENT_ALL_ATTRIB_BITS'
-C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Main.cpp(199,84): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Main.cpp(123,85): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float

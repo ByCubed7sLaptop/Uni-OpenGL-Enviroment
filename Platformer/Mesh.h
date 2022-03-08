@@ -11,7 +11,8 @@ public:
 	std::vector<Texture> textures;
 
 	// Render data
-	GLuint VAO, VBO;
+	//GLuint 
+	unsigned int VAO, VBO;
 
 	Mesh();
 	~Mesh();
