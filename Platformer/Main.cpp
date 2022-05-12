@@ -79,7 +79,12 @@ int main()
     Texture texture1;
     texture1.LoadFromFile("assets/container.png");
 
+
+    // Load Models
+    Shape cube = Shape::LoadFromFile("assets/cube.txt");
+
     Mesh mesh = Mesh();
+    mesh.SetShape(cube);
     mesh.textures.push_back(texture1);
 
     // Tell OpenGL for each sampler to which texture unit it belongs to
@@ -89,6 +94,8 @@ int main()
     ourShader.SetUniform("lightColor", 1.0f, 1.0f, 1.0f);
     ourShader.SetUniform("lightPos", 2.4f, 2.0f, 4.0f);
     //lightPos *= 2;
+
+    float rotation = 0;
 
     // Render loop
     // -----------
@@ -122,7 +129,8 @@ int main()
         ourShader.SetUniform("view", view);
         ourShader.SetUniform("viewPos", camera.Position);
 
-        mesh.Draw(ourShader, glm::vec3(), glm::quat(0.707107, 0.707107, 0.000, 0.000));
+        rotation += 0.01f;
+        mesh.Draw(ourShader, glm::vec3(), glm::vec3(rotation, 0, 0));
 
         // Swap buffers and poll events
         glfwSwapBuffers(window);

@@ -46,7 +46,6 @@ void Mesh::Draw(Shader shader, glm::vec3 pos, glm::quat quat)
     // Calculate the model matrix for each object and pass it to shader before drawing
     glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
     model = glm::translate(model, pos);
-
     
     quat = glm::normalize(quat);
     glm::mat4 rot = glm::mat4_cast(quat);
@@ -59,4 +58,14 @@ void Mesh::Draw(Shader shader, glm::vec3 pos, glm::quat quat)
     glDrawArrays(GL_TRIANGLES, 0, 36);
 
     glBindVertexArray(0);
+}
+
+void Mesh::Draw(Shader shader, glm::vec3 pos, glm::vec3 euler)
+{
+    //glm::quat aroundX = glm::quat(1.0f, 0.0f, 0.0f, euler.x);
+    //glm::quat aroundY = glm::quat(0.0f, 1.0f, 0.0f, euler.y);
+    //glm::quat aroundZ = glm::quat(0.0f, 0.0f, 1.0f, euler.z);
+    //glm::quat finalOrientation = aroundX * aroundY * aroundZ;
+
+    Draw(shader, pos, glm::quat(euler));
 }

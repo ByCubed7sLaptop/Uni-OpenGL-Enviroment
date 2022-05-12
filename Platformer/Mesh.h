@@ -19,5 +19,6 @@ public:
 	void SetShape(Shape& newShape);
 
 	void Draw(Shader shader, glm::vec3 pos, glm::quat quat);
+	void Draw(Shader shader, glm::vec3 pos, glm::vec3 euler);
 };
 

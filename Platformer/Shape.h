@@ -20,14 +20,15 @@
 
 class Shape {
 public:
+    // Constructor
+    Shape(std::vector<Vertex> vertices);
 
     // Copy constructor
     Shape(const Shape& oldShape);
 
     std::vector<Vertex> vertices;
 
-    // Constructor
-    Shape(std::vector<Vertex> vertices);
+    static Shape LoadFromFile(std::string filepath);
 
     static Shape Cube();
 };

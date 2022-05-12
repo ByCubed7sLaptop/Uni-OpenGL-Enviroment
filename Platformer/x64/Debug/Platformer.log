@@ -1,15 +1,10 @@
 ﻿  Main.cpp
-C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(326,1): warning C4005: 'GL_ALL_ATTRIB_BITS': macro redefinition
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(107): message : see previous definition of 'GL_ALL_ATTRIB_BITS'
-C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(414,1): warning C4005: 'GL_LOGIC_OP': macro redefinition
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(1152): message : see previous definition of 'GL_LOGIC_OP'
-C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(498,1): warning C4005: 'GL_TEXTURE_COMPONENTS': macro redefinition
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(1153): message : see previous definition of 'GL_TEXTURE_COMPONENTS'
-C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(592,1): warning C4005: 'GL_CLIENT_ALL_ATTRIB_BITS': macro redefinition
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(973): message : see previous definition of 'GL_CLIENT_ALL_ATTRIB_BITS'
-C:\Users\c019949l\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Main.cpp(123,85): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-  Platformer.vcxproj -> C:\Users\c019949l\Source\Repos\ByCubed7\OpenGL-Enviroment\x64\Debug\Platformer.exe
+C:\Users\ByCubed7\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(326,1): warning C4005: 'GL_ALL_ATTRIB_BITS': macro redefinition
+D:\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(107): message : see previous definition of 'GL_ALL_ATTRIB_BITS'
+C:\Users\ByCubed7\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(414,1): warning C4005: 'GL_LOGIC_OP': macro redefinition
+D:\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(1152): message : see previous definition of 'GL_LOGIC_OP'
+C:\Users\ByCubed7\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(498,1): warning C4005: 'GL_TEXTURE_COMPONENTS': macro redefinition
+D:\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(1153): message : see previous definition of 'GL_TEXTURE_COMPONENTS'
+C:\Users\ByCubed7\source\repos\ByCubed7\OpenGL-Enviroment\Platformer\Library\glad.h(592,1): warning C4005: 'GL_CLIENT_ALL_ATTRIB_BITS': macro redefinition
+D:\Windows Kits\10\Include\10.0.19041.0\um\GL\gl.h(973): message : see previous definition of 'GL_CLIENT_ALL_ATTRIB_BITS'
+  Platformer.vcxproj -> C:\Users\ByCubed7\Source\Repos\ByCubed7\OpenGL-Enviroment\x64\Debug\Platformer.exe
