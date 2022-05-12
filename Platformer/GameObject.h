@@ -52,6 +52,7 @@ public:
     }
 
     glm::vec3 GetPosition() { return position; }
+    glm::vec3 GetEular()    { return {yaw, pitch, 0}; }
     glm::vec3 GetFront()    { return front; }
     glm::vec3 GetUp()       { return up; }
     glm::vec3 GetRight()    { return right; }

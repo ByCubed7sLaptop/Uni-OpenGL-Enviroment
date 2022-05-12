@@ -35,6 +35,9 @@ bool firstMouse = true;
 float deltaTime = 0.0f;	
 float lastFrame = 0.0f;
 
+// Player
+GameObject player;
+
 int main()
 {
     // Initialize and configure glfw
@@ -85,6 +88,8 @@ int main()
     mesh.SetShape(cube);
     mesh.textures.push_back(texture1);
 
+    player = GameObject();
+
     // Tell OpenGL for each sampler to which texture unit it belongs to
     ourShader.Use();
     ourShader.SetUniform("texture1", 0);
@@ -127,8 +132,8 @@ int main()
         ourShader.SetUniform("view", view);
         ourShader.SetUniform("viewPos", camera.GetPosition());
 
-        rotation += 0.01f;
-        mesh.Draw(ourShader, glm::vec3(), glm::vec3(rotation, 0, 0));
+        player.Rotate({ 0.01f, 0, 0 });        
+        mesh.Draw(ourShader, player.GetPosition(), player.GetEular());
 
         // Swap buffers and poll events
         glfwSwapBuffers(window);
@@ -154,18 +159,21 @@ void processInput(GLFWwindow* window)
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera.OnKeyboard(BACKWARD, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) camera.OnKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) camera.OnKeyboard(RIGHT, deltaTime);
+
+    if (glfwGetKey(window, GLFW_KEY_UP   ) == GLFW_PRESS) player.Move(camera.GetFront() * deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_DOWN ) == GLFW_PRESS) player.Move(-camera.GetFront() * deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_LEFT ) == GLFW_PRESS) player.Move(-camera.GetRight() * deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) player.Move(camera.GetRight() * deltaTime);
 }
 
-// When the window size changed (by OS or user resize) this callback function executes
+// Window resize callback
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    // make sure the viewport matches the new window dimensions; note that width and 
-    // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
 }
 
 
-// When the mouse moves, this callback is called
+// Mouse move callback
 void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
 {
     float xpos = static_cast<float>(xposIn);
@@ -179,7 +187,7 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
     }
 
     float xoffset = xpos - lastX;
-    float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+    float yoffset = lastY - ypos; // Y is reversed
 
     lastX = xpos;
     lastY = ypos;
@@ -187,7 +195,7 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
     camera.OnMouseMovement(xoffset, yoffset);
 }
 
-// When the mouse scroll wheel scrolls, this callback is called
+// Mouse scroll wheel callback
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
     camera.OnMouseScroll(static_cast<float>(yoffset));
