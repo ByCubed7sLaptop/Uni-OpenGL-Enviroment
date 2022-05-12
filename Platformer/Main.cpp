@@ -3,15 +3,13 @@
 #include "Shape.h"
 #include "Mesh.h"
 
-//#undef main
-//#undef __gl_h_
 #define SDL_MAIN_HANDLED
 #define STB_IMAGE_IMPLEMENTATION
-//#define GLFW_INCLUDE_NONE
+
 #include <glad.h>
 #include <GLFW/glfw3.h>
 #include <stb_image.h>
-//#include <glm/gtc/type_ptr.hpp>
+
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 
@@ -46,7 +44,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // Initialize Window
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "EEEEEEEEEE", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Scene", NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -121,13 +119,13 @@ int main()
         ourShader.Use();
 
         // pass projection matrix to shader (note that in this case it could change every frame)
-        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+        glm::mat4 projection = glm::perspective(glm::radians(camera.GetZoom()), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         ourShader.SetUniform("projection", projection);
 
         // Camera view Transform
         glm::mat4 view = camera.GetViewMatrix();
         ourShader.SetUniform("view", view);
-        ourShader.SetUniform("viewPos", camera.Position);
+        ourShader.SetUniform("viewPos", camera.GetPosition());
 
         rotation += 0.01f;
         mesh.Draw(ourShader, glm::vec3(), glm::vec3(rotation, 0, 0));
@@ -152,10 +150,10 @@ void processInput(GLFWwindow* window)
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) camera.ProcessKeyboard(FORWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera.ProcessKeyboard(BACKWARD, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) camera.ProcessKeyboard(LEFT, deltaTime);
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) camera.ProcessKeyboard(RIGHT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) camera.OnKeyboard(FORWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) camera.OnKeyboard(BACKWARD, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) camera.OnKeyboard(LEFT, deltaTime);
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) camera.OnKeyboard(RIGHT, deltaTime);
 }
 
 // When the window size changed (by OS or user resize) this callback function executes
@@ -186,11 +184,11 @@ void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
     lastX = xpos;
     lastY = ypos;
 
-    camera.ProcessMouseMovement(xoffset, yoffset);
+    camera.OnMouseMovement(xoffset, yoffset);
 }
 
 // When the mouse scroll wheel scrolls, this callback is called
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
-    camera.ProcessMouseScroll(static_cast<float>(yoffset));
+    camera.OnMouseScroll(static_cast<float>(yoffset));
 }

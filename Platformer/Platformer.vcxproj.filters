@@ -6,10 +6,11 @@
     <ClCompile Include="Library\glad.c">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="GameObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -307,11 +308,12 @@
     <ClInclude Include="Library\stb_image.h">
       <Filter>Library</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="GameObject.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
